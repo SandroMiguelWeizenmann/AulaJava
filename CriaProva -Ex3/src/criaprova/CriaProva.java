@@ -22,7 +22,7 @@ public class CriaProva {
         
         Prova p1 = new Prova();//Instancia de Objeto. Em outras palavras cria-se o objeto  
         Scanner recebe = new Scanner(System.in);
-        System.out.print("Nome da Disciplina: "); 
+        System.out.print("Por favor! Nome da Disciplina: "); 
         p1.setNomeDisciplina(recebe.nextLine());
         System.out.print("Local da aplicação: ");
         p1.setLocal(recebe.nextLine());
