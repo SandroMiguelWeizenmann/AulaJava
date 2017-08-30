@@ -32,9 +32,9 @@ public class Prova {
    }
 
   public String obtemProvaImpressao(){
-      String retorno = new String();//obtemDetalhes();
-      String questao = new String();
-      String questao2 = new String();
+      String retorno = obtemDetalhes()+"\n_____________________________\n";
+      String questao = "";
+      String questao2 = "";
       int i, j;
       for(i=0;i<this.discursiva.length;i++){
           questao += ("\n"+(i+1)+"("+this.discursiva[i].getPeso()+") - ");
@@ -46,7 +46,7 @@ public class Prova {
           questao2 += (this.objetivas[j].getPergunta()+"\n");
           String[] opcoes = this.objetivas[j].getOpcoes();
           for(int k=0;k<5;k++){
-              questao2 += ((k+1)+") "+opcoes[k]);
+              questao2 += ((k+1)+") "+opcoes[k]+"\n");
           }
       }
       retorno += questao2;

@@ -7,7 +7,6 @@ package criaprova;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import jdk.nashorn.internal.scripts.JO;
 
 /**
  *
@@ -32,6 +31,7 @@ public class CriaProva {
         System.out.print("Peso: ");
         p1.setPeso(recebe.nextInt());
         
+        String auxiliar = new String();
         int qtdDisc;
         do{
             System.out.print("Quantidade de questões discursivas:");
@@ -46,14 +46,18 @@ public class CriaProva {
         for(int i=0;i<qtdDisc;i++){
             questaoD[i] = new Discursiva();
             System.out.print("Digite a "+(i+1)+"ª pergunta: ");
-            questaoD[i].setPergunta(recebe.next());   
-            System.out.println("Critério de Avaliação: ");
-            questaoD[i].setCriteriosCorrecao(recebe.next());
+            auxiliar = recebe.nextLine();
+            auxiliar = recebe.nextLine();
+            questaoD[i].setPergunta(auxiliar);   
+            System.out.print("Critério de Avaliação: ");
+            auxiliar = recebe.nextLine();
+           // auxiliar = recebe.nextLine();
+            questaoD[i].setCriteriosCorrecao(auxiliar);
             System.out.print("Peso: ");
             questaoD[i].setPeso(recebe.nextDouble());
             System.out.println("--------------------------------------");
         }
-        
+        p1.setDiscursiva(questaoD);
         int qtdO;
         do{
             System.out.print("Quantidade de questões objetivas: ");
@@ -68,13 +72,17 @@ public class CriaProva {
         for(int i=0;i<qtdO;i++){
             questaoO[i]= new Objetiva();
             System.out.print("Digite a "+(i+1)+"ª pergunta: ");
-            questaoO[i].setPergunta(recebe.next()); 
+            auxiliar = recebe.nextLine();
+            auxiliar = recebe.nextLine();
+            questaoO[i].setPergunta(auxiliar); 
             System.out.print("Peso: ");
             questaoO[i].setPeso(recebe.nextDouble());
             System.out.println("Digite as alternativas:");
             for(int j=0;j<5;j++){
                 System.out.print((j+1)+"ª alternativa: ");
-                c[j]=recebe.next();
+                auxiliar = recebe.nextLine();
+                auxiliar = recebe.nextLine();
+                c[j]=auxiliar;
             }
             questaoO[i].setOpcoes(c);
             int alternativa;
@@ -82,15 +90,15 @@ public class CriaProva {
                 System.out.print("Qual é a alternativa correta? ");
                 alternativa = recebe.nextInt();
             }while(alternativa<0 || alternativa>6);
-            questaoO[i].setRespostaCorreta(alternativa-1);
-            
-            
+            questaoO[i].setRespostaCorreta(alternativa-1);                 
         }
-        p1.setObjetivas(];///continuar apartir daqui!
+        //OBS: APÓS POPULAR O VETOR PRECISAMOS TRANSFERIR AO OBJETO//
+        p1.setObjetivas(questaoO);
+        
     
-       // System.out.println(p1.obtemDetalhes());
-       // JOptionPane.showMessageDialog(null,p1.obtemDetalhes());
-        JOptionPane.showMessageDialog(null, p1);
+        System.out.println(p1.obtemDetalhes());
+        //JOptionPane.showMessageDialog(null,p1.obtemDetalhes());
+        JOptionPane.showMessageDialog(null, p1.obtemProvaImpressao());
         
                 
                 
