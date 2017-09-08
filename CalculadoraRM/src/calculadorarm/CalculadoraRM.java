@@ -62,11 +62,11 @@ public class CalculadoraRM extends Application {
                 double num3EmDouble = Double.parseDouble(valorNum3);
                 double n1 = Math.pow(num1EmDouble, 2);
                 double n2 = Math.pow(num2EmDouble, 2);
-                double coss = Math.toDegrees(num3EmDouble); 
+                double coss = Math.toRadians(num3EmDouble); 
                        coss = Math.cos(coss);
                        
-                double conta = (n1+n2-2*num1EmDouble*num2EmDouble*coss);//////verificar/////
-                double result = Math.sqrt(conta);
+                //double conta = (n1+n2-2*num1EmDouble*num2EmDouble*coss);
+                double result = Math.sqrt(n1+n2-2*num1EmDouble*num2EmDouble*coss);
                 resultado.setText("A força é: "+result+" N.");
             }
         } );
@@ -83,11 +83,11 @@ public class CalculadoraRM extends Application {
                 double num2EmDouble = Double.parseDouble(valorNum2);
                 double num3EmDouble = Double.parseDouble(valorNum3);
                 
-                double n2 = Math.toDegrees(num2EmDouble);
-                       n2 = Math.sin(n2);
+               double n2 = Math.toRadians(num2EmDouble);
+                      n2 = Math.sin(n2);
                        
-                double n3 = Math.toDegrees(num3EmDouble);
-                       n3 = Math.sin(n3);
+               double n3 = Math.toRadians(num3EmDouble);
+                      n3 = Math.sin(n3);
                 double n4 = num1EmDouble * n3 / n2;
                 resultado.setText("A força é: "+n4+" N.");
             }
@@ -107,7 +107,7 @@ public class CalculadoraRM extends Application {
         Scene cena = new Scene(orquestrador, 500, 300);
         
         stage.setScene(cena);
-        stage.setTitle("Resistência dos Materiais:");
+        stage.setTitle("Resistência dos Materiais: Calculadora de Força Resultante");
         stage.show();
     }
     
