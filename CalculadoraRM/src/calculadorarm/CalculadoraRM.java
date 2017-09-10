@@ -39,13 +39,18 @@ public class CalculadoraRM extends Application {
         
         VBox orquestrador = new VBox();
         
-        Label l1 = new Label("Valor 1:");
+        Label l1 = new Label("Força 1:");
         TextField num1 = new TextField();
-        Label l2 = new Label("Valor 2 ou angulo Seno 1:");
+        Label l2 = new Label("Força 2 ou Seno 1:");
         TextField num2 = new TextField();
-        Label l3 = new Label("Seno 2 ou Cosseno:");
+        Label l3 = new Label("Cosseno ou Seno 2:");
         TextField num3 = new TextField();
         Label resultado = new Label("Resultado");
+        Label instrucoes = new Label ("\n\nINSTRUÇOES:");
+        Label lc = new Label ("LEI DO COSSENO:\n\tInforme as forças 1 e 2 e depois o angulo do cosseno"
+                + " para calcular a força resultante \natravés da lei do cosseno.");
+        Label ls = new Label("\nLEI DO SENO:\n\tInforme a força 1 e o angulo seno respectivo, o seno 2"
+                + " refere-se ao ângulo que \nqueremos saber a força resultante através da lei do seno.");
         
         HBox grupo = new HBox();
         
@@ -103,8 +108,11 @@ public class CalculadoraRM extends Application {
         grupo.getChildren().add(seno);
         orquestrador.getChildren().add(grupo);
         orquestrador.getChildren().add(resultado);
+        orquestrador.getChildren().add(instrucoes);
+        orquestrador.getChildren().add(lc);
+        orquestrador.getChildren().add(ls);
         
-        Scene cena = new Scene(orquestrador, 500, 300);
+        Scene cena = new Scene(orquestrador, 500, 400);
         
         stage.setScene(cena);
         stage.setTitle("Resistência dos Materiais: Calculadora de Força Resultante");
