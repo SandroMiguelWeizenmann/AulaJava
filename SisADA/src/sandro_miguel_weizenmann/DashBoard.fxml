@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.SwingNode?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="raiz" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="botaoMinhasAvaliacoes" layoutX="219.0" layoutY="269.0" mnemonicParsing="false" onAction="#onClickBotaoMinhasAvaliacoes" prefHeight="115.0" prefWidth="610.0" text="Minhas Avaliações">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <Button fx:id="meuDesempenhoBT" layoutX="219.0" layoutY="467.0" mnemonicParsing="false" onAction="#onClickBotaoMeuDesempenho" prefHeight="115.0" prefWidth="610.0" text="Meu Desempenho">
+         <font>
+            <Font size="36.0" />
+         </font></Button>
+      <SwingNode layoutX="350.0" layoutY="140.0" />
+   </children>
+</AnchorPane>
